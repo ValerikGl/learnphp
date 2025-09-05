@@ -9,14 +9,20 @@ class Box {
         $this->height = $height;
         $this->width = $width;
         $this->length = $length;
-  
     }
+
+  public function setWidth($width) {
+    if(is_numeric($width) && $width > 0) {
+      $this->width = $width;
+    } else {
+      throw new Exception("Width must be a positive number.");
+    }
+  }
 
     public function volume() {
         return $this->height * $this->width * $this->length;
     }
 }
-
 $box1 = new Box(10,10,10);
 $volume1 = $box1->volume();
 var_dump($box1);
