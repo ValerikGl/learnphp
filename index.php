@@ -49,7 +49,9 @@ switch($day) {
         break;
     case 7:
         var_dump('Pühapäev');
-        break;       
+        break;  
+    default:
+        var_dump('Vigane päev');     
 }
 
 
