@@ -98,5 +98,5 @@
     </style>
   </head>
   <body>
-    <?php include 'theme-toggle.php' ?>
-    <?php include 'nav.php' ?>
+    <?php include __DIR__ . '/theme-toggle.php' ?>
+    <?php include __DIR__ . '/nav.php' ?>
