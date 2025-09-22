@@ -29,7 +29,7 @@ if($match) {
         $method = $match['action'][1];
         $controller->$method();
     }
-    call_user_func($match['action']);
+    
 } else {
     echo "404 Page not found";
 }
