@@ -19,7 +19,7 @@ class AuthController
         }
         $user = new User();
         $user->email = $_POST['email'];
-        $user->password = md5($_POST['password']);
+        $user->password = password_hash ($_POST['password'], PASSWORD_BCRYPT);
         $user->save();
         header('Location: /login');
     }
@@ -34,7 +34,7 @@ class AuthController
     {
         $user = User::where('email', $_POST['email']);
         $user = $user[0] ?? null;
-        if(!$user || $user->password !== md5($_POST['password'])) {
+        if(!$user || !password_verify ($_POST['password'], $user->password)) {
             return header('Location: /login');
         }
         $_SESSION['userID'] = $user->id;
